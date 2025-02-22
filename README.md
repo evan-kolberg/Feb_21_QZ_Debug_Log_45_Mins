@@ -1,14 +1,12 @@
-[SOLVED] - On the bike, the age and weight parameters were very outdated and did not match those in the QZ app
+# [SOLVED] - On the bike, the age and weight parameters were very outdated and did not match those in the QZ app
 
-Trial 1
---------
+### Trial 1
 
 **Describe the bug**
 After a 30-minute workout, the odometer in QZ shows a much lower value than the one directly on the Schwinn 170 bike. 
 
 QZ: 7.86 miles
 Bike: 8.6 miles
---------------------
 Deviation: 0.74 miles
 
 * A ~15 second head start is expected for the bike and has no impact on odometer values
@@ -44,10 +42,8 @@ Graphs and Charts from the workout:
 ---
 ---
 
-**Trial 2: 45 mins**
---------------------
+### Trial 2: 45 mins
 Debug file: https://github.com/evan-kolberg/Feb_21_QZ_Debug_Log_45_Mins/blob/main/debug-Fri_Feb_21_18_52_30_2025.log
-
 QZ: 11.41 miles
 Bike: 12.6 miles
 Deviation: 1.19 miles
