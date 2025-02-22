@@ -1,3 +1,49 @@
+[SOLVED] - On the bike, the age and weight parameters were very outdated and did not match those in the QZ app
+
+Trial 1
+--------
+
+**Describe the bug**
+After a 30-minute workout, the odometer in QZ shows a much lower value than the one directly on the Schwinn 170 bike. 
+
+QZ: 7.86 miles
+Bike: 8.6 miles
+--------------------
+Deviation: 0.74 miles
+
+* A ~15 second head start is expected for the bike and has no impact on odometer values
+* The bike has to start a workout for Bluetooth data to be transmitted to QZ (i.e., "Quick Start" has to be pressed)
+* The QZ app starts the "Time Elapsed" clock when it detects pedaling for the first time
+* No stops in biking were done to cause any large deviation in both times (the bike _can_ pause if pedaling isn't done for 5-10 seconds, but QZ's time elapsed will continue. If long pauses were made, or if QZ started while the bike already had a large odometer value, that would provide an invalid case)
+* Both the bike and QZ were started before pedaling, and both were stopped after pedaling ceased.
+
+
+**Expected behavior**
+Given that the workout wasn't too long, I expected the values to be relatively similar. I do understand that within [schwinn170bike.cpp](https://github.com/cagnulein/qdomyos-zwift/blob/master/src/devices/schwinn170bike/schwinn170bike.cpp), the displayed data within QZ are calculated based on various long decimal values.
+
+**Screenshots**
+
+![Image](https://github.com/user-attachments/assets/deec218d-e99d-4278-99c2-c3e66b14682c)
+
+
+Graphs and Charts from the workout:
+
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/cafec022-fa24-4427-8de9-83b7a7507f4e" width="150">
+  <img src="https://github.com/user-attachments/assets/4ef2161d-c3ba-47ed-9594-b68c701ebb26" width="150">
+  <img src="https://github.com/user-attachments/assets/8020d4d7-ebc1-4cf1-af07-92c3251c4074" width="150">
+  <img src="https://github.com/user-attachments/assets/74a7826b-eab6-44f6-a1ac-4a603345b8bd" width="150">
+  <img src="https://github.com/user-attachments/assets/a63d5ad8-6365-4c7c-873b-436764d8f301" width="150">
+  <img src="https://github.com/user-attachments/assets/784b9388-fc40-474e-bc4c-6a67305c26e8" width="150">
+  <img src="https://github.com/user-attachments/assets/fa1a1938-e3bc-4ab3-b754-df7205bca537" width="150">
+  <img src="https://github.com/user-attachments/assets/a1b44fb3-33ef-43cd-9e8d-e5d03bed553a" width="150">
+</div>
+
+
+
+---
+---
+
 **Trial 2: 45 mins**
 --------------------
 Debug file: https://github.com/evan-kolberg/Feb_21_QZ_Debug_Log_45_Mins/blob/main/debug-Fri_Feb_21_18_52_30_2025.log
@@ -13,7 +59,6 @@ Procedure:
 4. The attached photo was taken
 
 Device file: [schwinn170bike.cpp](https://github.com/cagnulein/qdomyos-zwift/blob/master/src/devices/schwinn170bike/schwinn170bike.cpp)
-_________________
 
 **Screenshots**
 
